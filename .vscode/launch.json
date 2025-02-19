@@ -10,7 +10,8 @@
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
-            "args": ["main:app","--log-level", "warning"]
+            "args": ["main:app","--log-level", "warning"],
+            "justMyCode": false
 }
     ]
 }

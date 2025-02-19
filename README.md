@@ -1,3 +1,44 @@
+# Instalation step
+-Instalar postgressql
+```
+   sudo apt update
+   sudo apt upgrade
+   sudo apt install python3-pip
+   sudo apt install libpq-dev
+   sudo apt install python-is-python3
+   sudo apt install postgresql postgresql-contrib
+   sudo systemctl start postgresql.service
+ ```  
+
+## Create postgres user
+   ```
+   sudo -i -u postgres
+   createuser --interactive
+   createdb webex
+   psql
+   alter user webex with encrypted password 'webex';
+   grant all privileges on database webex to webex;
+   exit
+   sudo adduser webex
+```
+## Instalar prerequisitos
+pip install -r requirements.txt
+
+## Ejecutar el servicio
+python setup.py run
+
+Please enter a value for WEBEX_ADMIN_UID: Generado de Get /People 
+Please enter a value for CLIENT_ID: Integracion Webex.developer
+Configure the following scopes for the Webex Integration: `spark:all,spark-admin:xsi,spark:xsi,spark-admin:locations_read,spark-admin:people_read,spark-admin:licenses_read`
+Please enter a value for CLIENT_SECRET: secret de la integracion
+Please enter a value for SQLALCHEMY_DATABASE_URL: postgresql://webex:webex@localhost/webex 
+
+
+
+
+
+
+
 # gve_devnet_webex_xsi_call_block
 This program utilizes Webex's External Service Interface (XSI) events and real-time geolocation tracking to dynamically manage call permissions within an organization, allowing or blocking calls based on users' compliance with predefined geographical boundaries. Leveraging OAuth for secure authentication and JavaScript for continuous geolocation updates, it ensures that only authorized users within specific locations can initiate or receive calls, enhancing the organization's security and compliance posture.
 
